@@ -1,1 +1,1 @@
-# Devops-Proj2
+# DevOps Project using Terraform, Jenkins, SonarQube, Artifactory, Ansible, Docker
