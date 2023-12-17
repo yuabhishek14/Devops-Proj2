@@ -6,14 +6,15 @@ resource "aws_instance" "demo-server" {
   ami = "ami-0759f51a90924c166"
   instance_type = "t2.micro"
   key_name = "dpp"
-  security_groups = [ "demo-sg" ]
+  //security_groups = [ "demo-sg" ]
+  vpc_security_group_ids = [ aws_security_group.demo-sg.id ]
   subnet_id = aws_subnet.dpp-public-subnet-01
 }
 
 resource "aws_security_group" "demo-sg" {
   name        = "demo-sg"
   description = "SSH Access"
-  vpc_id = aws_vpc.dpp-vpc
+  vpc_id = aws_vpc.dpp-vpc.id
 
   ingress {
     description      = "SSH Access"
