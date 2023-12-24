@@ -13,15 +13,19 @@ Add jenkins master and slave private IPs in the inventory file
 in this case, we are using /opt is our working directory for Ansible. 
    ```
     [jenkins-master]
-    18.209.18.194
+    10.1.1.129
+
     [jenkins-master:vars]
-    ansible_user=ec2-user
-    ansible_ssh_private_key_file=/opt/dpo.pem
+    ansible_user=ubuntu
+    ansible_ssh_private_key_file=/opt/dpp.pem
+
     [jenkins-slave]
-    54.224.107.148
+    10.1.1.31
+
     [jenkins-slave:vars]
-    ansible_user=ec2-user
-    ansible_ssh_private_key_file=/opt/dpo.pem
+    ansible_user=ubuntu
+    ansible_ssh_private_key_file=/opt/dpp.pem
+
    ```
 
 1. Test the connection  
